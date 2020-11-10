@@ -1,0 +1,15 @@
+#!/bin/env sh
+
+FILE=$(cat $1/courses.csv | sed '1d')
+
+SELECT=$(echo "$FILE" | cut -d',' -f1 | rofi -dmenu)
+
+if [[ -n "$SELECT"  ]]; then
+    COURSE=($(echo "$FILE" | grep ^$SELECT | sed -e "s/,/ /g"))
+else
+    exit
+fi
+
+zoom "zoommtg://videoconf-colibri.zoom.us/join?action=join&confno=${COURSE[1]}&pwd=${COURSE[2]}" &
+disown
+
