@@ -1,6 +1,6 @@
 # **Warning(Deprecated)**
 
-## **Moved to https://github.com/tuxPT/scripts.git **
+## **Moved to https://github.com/tuxPT/scripts.git**
 
 # Requirements
 
